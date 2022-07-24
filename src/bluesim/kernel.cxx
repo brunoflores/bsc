@@ -152,14 +152,14 @@ static void* sim_thread(void* ptr)
  * for clock events.
  */
 
-tClock get_clock_event_clk(unsigned int value)
+tClock get_clock_event_clk(unsigned int bs_value)
 {
-  return ((tClock) (value >> 1));
+  return ((tClock) (bs_value >> 1));
 }
 
-tEdgeDirection get_clock_event_dir(unsigned int value)
+tEdgeDirection get_clock_event_dir(unsigned int bs_value)
 {
-  return ((tEdgeDirection) (value & 1));
+  return ((tEdgeDirection) (bs_value & 1));
 }
 
 unsigned int set_clock_event_data(tClock clk, tEdgeDirection dir)
@@ -1117,11 +1117,11 @@ tTime bk_clock_first_edge(tSimStateHdl simHdl, tClock clk)
   return simHdl->clocks[clk].initial_delay;
 }
 
-tTime bk_clock_duration(tSimStateHdl simHdl, tClock clk, tClockValue value)
+tTime bk_clock_duration(tSimStateHdl simHdl, tClock clk, tClockValue bs_value)
 {
   if (clk >= simHdl->clocks.size())
     return 0;
-  if (value == CLK_LOW)
+  if (bs_value == CLK_LOW)
     return simHdl->clocks[clk].low_phase_length;
   else
     return simHdl->clocks[clk].high_phase_length;
