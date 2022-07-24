@@ -63,7 +63,8 @@ CXXFLAGS += -Wall -Wextra -Werror \
 	-std=c++11 \
         -D_FILE_OFFSET_BITS=64 \
         -fno-rtti \
-	-fPIC
+	-fPIC \
+	-I /home/bruno/devel/ocaml/build/lib/ocaml
 
 # Compares two dotted numeric strings (e.g 2.3.16.1) for $1 >= $2
 define version_ge
