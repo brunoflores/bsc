@@ -13,6 +13,7 @@
 #include "version.h"
 #include "portability.h"
 
+#include <caml/callback.h>
 
 /* forward declarations of some static helper functions */
 static void setup_state_dump_events(tSimStateHdl simHdl, bool initial);
@@ -640,6 +641,11 @@ bool check_version(tBluesimVersionInfo* version)
 /* Initialize the Bluesim kernel */
 tSimStateHdl bk_init(tModel model, tBool master)
 {
+  char* c = (char *)malloc(1 * sizeof(char));
+  c = NULL;
+  char* dummy[] = {c};
+  caml_startup((char_os **)dummy);
+
   tSimStateHdl simHdl = new tSimState;
 
   simHdl->model = (Model*)model;
