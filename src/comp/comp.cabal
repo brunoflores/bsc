@@ -72,7 +72,4 @@ executable comp
                       ../vendor/stp/include_hs,
                       ../../src/Parsec
     default-language: Haskell2010
-    -- -L../vendor/yices/lib -lyices
-    -- extra-libraries: yices
-    -- ld-options: -I../vendor/yices/include
     ld-options: -L../vendor/yices/lib -lyices -L../vendor/stp/lib -lstp
