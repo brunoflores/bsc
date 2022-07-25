@@ -21,6 +21,148 @@ maintainer:         bruno@brunoflores.com.br
 -- category:
 extra-source-files: CHANGELOG.md
 
+library
+    exposed-modules:   CSyntax
+                     , Id
+                     , Depend
+                     , Error
+                     , Flags
+                     , FlagsDecode
+                     , FileIOUtil
+                     , Position
+    other-modules:   Backend
+                   , ASyntax
+                   , VFileName
+                   , ASyntaxUtil
+                   , Assump
+                   , Bag
+                   , Balanced
+                   , BinParse
+                   , BinaryIO
+                   , CCSyntax
+                   , CFreeVars
+                   , CPPLineDirectives
+                   , CSubst
+                   , CSyntaxTypes
+                   , CSyntaxUtil
+                   , ConTagInfo
+                   , ContextErrors
+                   , CtxRed
+                   , ForeignFunctions
+                   , GenFuncWrap
+                   , GenWrapUtils
+                   , GraphWrapper
+                   , IStateLoc
+                   , ISyntax
+                   , IType
+                   , InferKind
+                   , InstNodes
+                   , KIMisc
+                   , ListMap
+                   , ListUtil
+                   , MVarStrict
+                   , MakeSymTab
+                   , Parse
+                   , Parsec
+                   , ParsecChar
+                   , ParsecCombinator
+                   , ParsecExpr
+                   , ParsecPrim
+                   , Parser.BSV
+                   , Parser.BSV.CVParser
+                   , Parser.BSV.CVParserAssertion
+                   , Parser.BSV.CVParserCommon
+                   , Parser.BSV.CVParserImperative
+                   , Parser.BSV.CVParserUtil
+                   , Parser.Classic
+                   , Parser.Classic.CParser
+                   , Parser.Classic.Warnings
+                   , PoisonUtils
+                   , Pred
+                   , Pred2STP
+                   , Pred2Yices
+                   , Prim
+                   , ProofObligation
+                   , RealUtil
+                   , SATPred
+                   , SCC
+                   , SEMonad
+                   , STP
+                   , STPFFI
+                   , Scheme
+                   , StdPrel
+                   , Subst
+                   , SymTab
+                   , SystemVerilogPreprocess
+                   , SystemVerilogScanner
+                   , SystemVerilogTokens
+                   , TCMisc
+                   , TCPat
+                   , TCheck
+                   , TIMonad
+                   , TmpNam
+                   , TopUtils
+                   , TypeCheck
+                   , Unify
+                   , Verilog
+                   , Wires
+                   , Yices
+                   , YicesFFI
+                   , CVPrint
+                   , BuildVersion
+                   , CType
+                   , Classic
+                   , ErrorTCompat
+                   , ErrorUtil
+                   , Eval
+                   , FStringCompat
+                   , FileNameUtil
+                   , Fixity
+                   , GHCPretty
+                   , IOMutVar
+                   , IOUtil
+                   , IdPrint
+                   , IntLit
+                   , IntegerUtil
+                   , Lex
+                   , Literal
+                   , Log2
+                   , NumType
+                   , PFPrint
+                   , PPrint
+                   , PVPrint
+                   , Pragma
+                   , PreIds
+                   , PreStrings
+                   , Pretty
+                   , SchedInfo
+                   , Sort
+                   , SpeedyString
+                   , SystemVerilogKeywords
+                   , Type
+                   , Undefined
+                   , Util
+                   , VModInfo
+                   , Version
+    build-depends:    base ^>=4.15.1.0, containers ^>=0.6.4.1,
+                      mtl ^>=2.2.2, array ^>=0.5.4.0,
+                      directory ^>=1.3.6.2, syb ^>=0.7.2.1,
+                      regex-compat ^>=0.95.2.1, filepath ^>=1.4.2.1,
+                      split, unix ^>=2.7.2.2, old-time,
+                      process ^>=1.6.13.2, time ^>=1.9.3
+    hs-source-dirs:   .,
+                      ./Libs,
+                      ./GHC,
+                      ./GHC/posix,
+                      ./Parser,
+                      ../vendor/yices/include_hs,
+                      ../vendor/stp/include_hs,
+                      ../../src/Parsec
+    default-language: Haskell2010
+    extra-lib-dirs: /home/bruno/devel/bsc/src/vendor/yices/lib ,
+                    /home/bruno/devel/bsc/src/vendor/stp/lib
+    extra-libraries: yices stp
+
 executable comp
     main-is:          bsc.hs
 
