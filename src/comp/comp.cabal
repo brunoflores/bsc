@@ -64,15 +64,15 @@ executable comp
                       split, unix ^>=2.7.2.2, old-time,
                       process ^>=1.6.13.2, time ^>=1.9.3
     hs-source-dirs:   .,
-                      /home/bruno/devel/bsc/src/comp/Libs,
-                      /home/bruno/devel/bsc/src/comp/GHC,
-                      /home/bruno/devel/bsc/src/comp/GHC/posix,
-                      /home/bruno/devel/bsc/src/comp/Parser,
-                      /home/bruno/devel/bsc/src/vendor/yices/include_hs,
-                      /home/bruno/devel/bsc/src/vendor/stp/include_hs,
-                      /home/bruno/devel/bsc/src/Parsec
+                      ./Libs,
+                      ./GHC,
+                      ./GHC/posix,
+                      ./Parser,
+                      ../vendor/yices/include_hs,
+                      ../vendor/stp/include_hs,
+                      ../../src/Parsec
     default-language: Haskell2010
     -- -L../vendor/yices/lib -lyices
     -- extra-libraries: yices
     -- ld-options: -I../vendor/yices/include
-    ld-options: -L/home/bruno/devel/bsc/src/vendor/yices/lib -lyices -L../vendor/stp/lib -lstp
+    ld-options: -L../vendor/yices/lib -lyices -L../vendor/stp/lib -lstp
