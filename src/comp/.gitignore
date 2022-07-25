@@ -22,3 +22,5 @@ vcdcheck
 # Ignore TAGS files
 TAGS
 tags
+
+.stack-work/
